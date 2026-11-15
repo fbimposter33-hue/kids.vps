@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --indigo: #4f46e5;
+    --violet: #7c3aed;
+    --dark: #0f172a;
+    --slate: #64748b;
+    --light: #f8fafc;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    color: #0f172a;
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+/* Gradients and animations */
+@keyframes gradShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -70%;
+  }
+  60%, 100% {
+    left: 130%;
+  }
+}
+
+@keyframes tagPulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+/* Custom classes matching the reference site */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #db2777, #4f46e5);
+  background-size: 220% 220%;
+  animation: gradShift 7s ease infinite;
+}
+
+.wa-btn {
+  background-color: #25D366;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.wa-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  animation: shine 3.4s ease infinite;
+}
+
+.wa-btn:hover {
+  background-color: #1eb958;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+.hero-glow-1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22), transparent 65%);
+}
+
+.hero-glow-2 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18), transparent 65%);
+}
+
+.tag-badge {
+  animation: tagPulse 2.6s ease-in-out infinite;
+}
