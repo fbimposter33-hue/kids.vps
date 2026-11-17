@@ -155,5 +155,5 @@ export const PACKAGES = [
   }
 ];
 
-export const WHATSAPP_NUMBER = '8801603410849';
+export const WHATSAPP_NUMBER = '8801749564514';
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
